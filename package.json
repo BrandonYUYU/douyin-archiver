@@ -1,0 +1,10 @@
+{
+  "name": "douyin-archiver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dev-time config only. The extension itself has no dependencies and no build step; this file exists so `node --test` can load extension/lib/*.js as ES modules.",
+  "scripts": {
+    "test": "node --test --test-timeout=20000 \"test/**/*.test.js\""
+  }
+}

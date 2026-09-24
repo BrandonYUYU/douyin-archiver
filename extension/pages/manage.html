@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Douyin Archiver — manage archive</title>
+    <link rel="stylesheet" href="../popup/popup.css" />
+  </head>
+  <body class="page">
+    <h1>Manage archive</h1>
+
+    <p class="count"><output id="total">0</output> <span>videos archived</span></p>
+    <p class="status" id="status" role="status">Loading…</p>
+
+    <fieldset>
+      <legend>Export</legend>
+      <div class="buttons">
+        <button type="button" id="exportJson">Export JSON</button>
+        <button type="button" id="exportCsv">Export CSV</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Import</legend>
+      <p>
+        <label for="importFile">Choose a previously exported JSON file</label>
+      </p>
+      <input type="file" id="importFile" accept="application/json,.json" />
+      <p class="hint">
+        Records merge by video ID, so importing the same file twice adds nothing.
+        Importing never deletes anything.
+      </p>
+      <ul class="log" id="importLog" hidden></ul>
+    </fieldset>
+
+    <fieldset class="danger">
+      <legend>Danger zone</legend>
+      <p>
+        Deleting the archive cannot be undone from here. Export first if you have
+        not already.
+      </p>
+      <button type="button" id="clearArchive" class="destructive">Delete all records</button>
+    </fieldset>
+
+    <script type="module" src="manage.js"></script>
+  </body>
+</html>

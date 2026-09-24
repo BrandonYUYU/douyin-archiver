@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Douyin Archiver</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Douyin Archiver</h1>
+
+    <p class="count"><output id="total">0</output> <span>videos archived</span></p>
+    <p class="status" id="status" role="status" aria-live="polite">Loading…</p>
+
+    <fieldset>
+      <legend>Run</legend>
+
+      <div class="field">
+        <label for="listSelect">List</label>
+        <select id="listSelect"></select>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="start">Start</button>
+        <button type="button" id="stop" disabled>Stop</button>
+        <button type="button" id="openList" hidden>Open that list</button>
+      </div>
+
+      <p class="hint" id="runHint">
+        Open your own 点赞 or 收藏 list, then press Start. You can close this
+        popup — the run keeps going.
+      </p>
+
+      <dl class="counters" id="counters" hidden>
+        <div><dt>Scrolls</dt><dd id="cScrolls">0</dd></div>
+        <div><dt>New</dt><dd id="cNew">0</dd></div>
+        <div><dt>Known streak</dt><dd id="cKnown">0</dd></div>
+        <div><dt>From DOM</dt><dd id="cDom">0</dd></div>
+      </dl>
+    </fieldset>
+
+    <fieldset>
+      <legend>Export</legend>
+      <div class="buttons">
+        <button type="button" id="exportJson">Export JSON</button>
+        <button type="button" id="exportCsv">Export CSV</button>
+      </div>
+      <p class="hint">
+        JSON is the archival format and is what Import reads. Keep one somewhere
+        safe — it is your real backup.
+      </p>
+    </fieldset>
+
+    <details id="settingsPanel">
+      <summary>Settings</summary>
+
+      <div class="field">
+        <label for="minDelayMs">Pause between scrolls (ms)</label>
+        <span class="pair">
+          <input type="number" id="minDelayMs" step="100" aria-label="minimum pause" />
+          <span aria-hidden="true">–</span>
+          <input type="number" id="maxDelayMs" step="100" aria-label="maximum pause" />
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="earlyStopThreshold">Stop after this many already-known videos</label>
+        <input type="number" id="earlyStopThreshold" step="10" />
+      </div>
+
+      <div class="field">
+        <label for="maxRunMinutes">Give up after (minutes)</label>
+        <input type="number" id="maxRunMinutes" step="5" />
+      </div>
+
+      <label class="row">
+        <input type="checkbox" id="fullRescan" />
+        <span>Full rescan — walk the whole list, ignoring the early stop</span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="reconMode" />
+        <span>Recon mode — log every request URL to the page console</span>
+      </label>
+
+      <div class="buttons">
+        <button type="button" id="saveSettings">Save settings</button>
+        <button type="button" id="resetSettings">Reset to defaults</button>
+      </div>
+
+      <p class="hint">
+        Slower pauses are less likely to trigger a captcha. Recon mode is for
+        rediscovering Douyin's endpoints — every path and selector the extension
+        relies on lives in <code>extension/lib/targets.js</code>.
+      </p>
+    </details>
+
+    <p class="hint">
+      <a href="#" id="openManage">Import / clear archive →</a>
+    </p>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

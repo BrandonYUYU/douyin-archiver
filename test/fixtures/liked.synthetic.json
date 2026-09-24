@@ -1,0 +1,70 @@
+{
+  "_comment": "HAND-WRITTEN, not captured from Douyin. Built from the field names in extension/lib/targets.js so the suite is meaningful before recon has been run. Replace with a scrubbed real capture when available - see README.md in this folder.",
+  "status_code": 0,
+  "max_cursor": 1714500000000,
+  "has_more": 1,
+  "aweme_list": [
+    {
+      "aweme_id": "7301234567890123456",
+      "desc": "今天的晚餐：红烧肉 🍖",
+      "create_time": 1714400000,
+      "author": {
+        "nickname": "小明的厨房",
+        "sec_uid": "SEC_UID_PLACEHOLDER_A",
+        "uid": "UID_PLACEHOLDER_A"
+      },
+      "statistics": {
+        "digg_count": 12345,
+        "comment_count": 678
+      },
+      "video": {
+        "duration": 15000,
+        "cover": { "url_list": ["https://p3.douyinpic.com/placeholder-cover-a.jpeg"] },
+        "play_addr": {
+          "url_list": ["https://v3.douyinvod.com/EXPIRES-IN-HOURS-MUST-NOT-BE-STORED"]
+        }
+      }
+    },
+    {
+      "desc": "item with no id at all - must be dropped, not crash",
+      "author": { "nickname": "无效", "sec_uid": "SEC_UID_PLACEHOLDER_B" },
+      "statistics": { "digg_count": 1 },
+      "video": { "duration": 1000 }
+    },
+    {
+      "_comment": "Same aweme_id as the first item with identical data - this is what pagination overlap looks like when a page boundary repeats an item.",
+      "aweme_id": "7301234567890123456",
+      "desc": "今天的晚餐：红烧肉 🍖",
+      "create_time": 1714400000,
+      "author": {
+        "nickname": "小明的厨房",
+        "sec_uid": "SEC_UID_PLACEHOLDER_A"
+      },
+      "statistics": {
+        "digg_count": 12345,
+        "comment_count": 678
+      },
+      "video": {
+        "duration": 15000,
+        "cover": { "url_list": ["https://p3.douyinpic.com/placeholder-cover-a.jpeg"] }
+      }
+    },
+    {
+      "aweme_id": "7309876543210987654",
+      "desc": "标题里有 \"引号\", 逗号\n还有换行",
+      "create_time": 1714450000,
+      "author": {
+        "nickname": "测试, 账号",
+        "sec_uid": "SEC_UID_PLACEHOLDER_C"
+      },
+      "statistics": {
+        "digg_count": 0,
+        "comment_count": 0
+      },
+      "video": {
+        "duration": 60000,
+        "cover": { "url_list": ["//p9.douyinpic.com/protocol-relative-cover.jpeg"] }
+      }
+    }
+  ]
+}

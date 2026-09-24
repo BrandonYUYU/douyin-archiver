@@ -1,0 +1,46 @@
+<!--
+  HAND-WRITTEN fixture, not captured from Douyin. Shapes are modelled on a typical
+  virtualized tile grid: each tile wraps an anchor to /video/{id}, mixed in with
+  profile links, hashtag links and a couple of malformed hrefs.
+
+  Replace with a real (scrubbed) snippet when you have one — the scrubbing rules
+  are in the README next to this file, and the selectors it must match live in
+  extension/lib/targets.js.
+-->
+<div data-e2e="user-post-list" class="grid">
+  <!-- a normal tile: cover anchor plus a separate author anchor -->
+  <div class="tile">
+    <a href="/video/7301234567890123456" class="cover">
+      <img src="https://p3.douyinpic.com/placeholder-cover-a.jpeg" alt="今天的晚餐" />
+    </a>
+    <a href="/user/SEC_UID_PLACEHOLDER_A" class="author">小明的厨房</a>
+  </div>
+
+  <!-- absolute URL with query parameters, as the share links use -->
+  <div class="tile">
+    <a href="https://www.douyin.com/video/7309876543210987654?previous_page=user_like" class="cover">
+      <img src="https://p9.douyinpic.com/protocol-relative-cover.jpeg" alt="标题" />
+    </a>
+  </div>
+
+  <!-- the same video appearing twice, as a re-render can produce -->
+  <div class="tile">
+    <a href="/video/7301234567890123456" class="cover"></a>
+  </div>
+
+  <!-- links that must NOT be harvested -->
+  <div class="rail">
+    <a href="/search/%E7%BE%8E%E9%A3%9F">美食</a>
+    <a href="/hashtag/1234567890">#hashtag</a>
+    <a href="/user/self?showTab=favorite_collection">收藏</a>
+    <a href="/video/">malformed, no id</a>
+    <a href="/video/12345">id too short to be an aweme id</a>
+    <a href="/note/7300000000000000009">a note, not a video</a>
+    <a>anchor with no href at all</a>
+  </div>
+
+  <!-- a third real video, after the noise -->
+  <div class="tile">
+    <a href="/video/7311111111111111111" class="cover"></a>
+  </div>
+</div>

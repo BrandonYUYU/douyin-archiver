@@ -1,0 +1,44 @@
+{
+  "_comment": "HAND-WRITTEN, not captured from Douyin. Deliberately nests items one level deeper than liked.synthetic.json to exercise the candidate-path fallbacks in extension/lib/targets.js.",
+  "status_code": 0,
+  "cursor": 20,
+  "has_more": false,
+  "aweme_list": [
+    {
+      "aweme_info": {
+        "aweme_id": "7311111111111111111",
+        "desc": "收藏的旅行 vlog ✈️",
+        "create_time": 1714460000,
+        "author": {
+          "nickname": "旅行日记",
+          "sec_uid": "SEC_UID_PLACEHOLDER_D"
+        },
+        "statistics": {
+          "digg_count": 98765,
+          "comment_count": 4321
+        },
+        "video": {
+          "duration": 120000,
+          "cover": { "url_list": ["https://p6.douyinpic.com/placeholder-cover-d.jpeg"] }
+        }
+      }
+    },
+    {
+      "aweme_id": "7301234567890123456",
+      "desc": "今天的晚餐：红烧肉 🍖 (also in the liked list)",
+      "create_time": 1714400000,
+      "author": {
+        "nickname": "小明的厨房",
+        "sec_uid": "SEC_UID_PLACEHOLDER_A"
+      },
+      "statistics": {
+        "digg_count": 12500,
+        "comment_count": 700
+      },
+      "video": {
+        "duration": 15000,
+        "cover": { "url_list": ["https://p3.douyinpic.com/placeholder-cover-a.jpeg"] }
+      }
+    }
+  ]
+}

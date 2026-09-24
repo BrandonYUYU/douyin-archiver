@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# Personal data — NEVER commit archived video lists.
+# Your liked/favorites export contains your account's viewing history.
+# ---------------------------------------------------------------------------
+exports/
+*.csv
+/douyin-archive*.json
+/*-export.json
+/backup*.json
+
+# The ONLY sanctioned place for committed JSON samples is test/fixtures/.
+# Scrub account identifiers before committing anything there — see
+# test/fixtures/README.md.
+
+# ---------------------------------------------------------------------------
+# Tooling
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+
+# Generated public mirror — built by `node tools/publish.js`, and its own git
+# repo. Never tracked here, or the private repo would contain a copy of itself.
+public-mirror/
+
+# ---------------------------------------------------------------------------
+# OS / editor cruft
+# ---------------------------------------------------------------------------
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
