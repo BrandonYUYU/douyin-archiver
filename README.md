@@ -1,5 +1,6 @@
 <img src="docs/icon-preview.png" alt="Extension icon: a white download arrow on a blue rounded square" width="96" align="right" />
 
+
 # Douyin Liked / Favorites Archiver
 
 A Chrome/Edge extension that auto-scrolls your own Douyin 点赞 (liked) and 收藏
