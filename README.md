@@ -1,4 +1,4 @@
-<img src="docs/icon-preview.png" alt="Extension icon: a white download arrow on a blue rounded square" width="96" align="right" />
+<img src="docs/icon-preview.png" alt="Extension icon: a white download arrow on a blue rounded square" width="64" align="right" />
 
 
 # Douyin Liked / Favorites Archiver
