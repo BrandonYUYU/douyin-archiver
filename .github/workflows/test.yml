@@ -1,0 +1,28 @@
+# Runs the test suite on every push to main and on every pull request.
+#
+# Only relies on package.json's `npm test` script and the test/ folder.
+# No secrets, no deploy steps.
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Read-only token: this workflow only needs to check out code.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 24 matches local development. `node --test` with a glob needs 21+.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # No `npm ci`: the project has no dependencies to install.
+      - run: npm test

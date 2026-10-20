@@ -1,0 +1,7 @@
+# Turns off blank issues so every report goes through a form, and points
+# security reports at private advisories instead of the public tracker.
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/BrandonYUYU/douyin-archiver/security/advisories/new
+    about: Please report security problems privately, not as a public issue.

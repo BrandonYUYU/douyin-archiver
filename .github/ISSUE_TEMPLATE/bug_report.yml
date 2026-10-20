@@ -1,0 +1,72 @@
+name: Bug report
+description: Something does not work as described in the README.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Do not attach an archive export** — it contains your viewing history.
+        For a security problem, use the Security tab instead of this form.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open https://www.douyin.com/user/self?showTab=like
+        2. Click Start in the popup
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: list
+    attributes:
+      label: Which list?
+      options:
+        - 点赞 (liked)
+        - 收藏 (favorites)
+        - Both
+        - Not list-specific (popup, import, export)
+    validations:
+      required: true
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension version
+      description: Shown on chrome://extensions under the extension's name.
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      description: chrome://version or edge://version. Version 111 or newer is required.
+      placeholder: Chrome 130.0.6723.70
+    validations:
+      required: true
+
+  - type: textarea
+    id: recon
+    attributes:
+      label: Recon mode output
+      description: |
+        Turn on Recon mode in the popup, reproduce the problem, open DevTools → Console, filter on `[dy-archiver]`, and paste the lines here. Remove anything that identifies your account.
+      render: text
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots of the popup, console errors, how many videos the list has.

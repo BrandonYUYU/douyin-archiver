@@ -28,6 +28,8 @@ original stream is left untouched for the page to consume — and forwards a cop
 `postMessage` to an isolated-world script, which validates it and hands it to the
 service worker for deduplicated storage. See `extension/content/hook.js`.
 
+![Architecture: how hook.js, content.js, the service worker and the popup connect](docs/architecture-diagram.png)
+
 ## Install
 
 1. Open `chrome://extensions` (or `edge://extensions`).
